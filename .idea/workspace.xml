@@ -4,47 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e899dad9-5d4a-47a1-8ea7-11fea31cee19" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LeetCode_sol.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Balanced_Binary_Tree_110.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Best_Time_To_Buy_and_Sell_a_Stock_121.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Binary_Tree_Inorder_Traversal_94.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Binary_Tree_Postorder_Traversal_145.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Binary_Tree_Preorder_Traversal_144.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Fibonacci_Number_509.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Find_First_Palindromic_String_in_the_Array_2108.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Find_Target_Indices_After_Sorting_Array_2089.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Fizz_Buzz_412.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/How_Many_Numbers_Are_Smaller_Than_The_Current_Number_1365.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Invert_Binary_Tree_226.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Linked_List_Cycle_14.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Longest_Common_Prefix_14.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Maximum_Depth_of_Binary_Tree_104.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Maximum_Product_Difference_Between_Two_Pairs_1913.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Merge_Two_Binary_Trees_617.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Merge_Two_Sorted_List_21.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Minimum_Depth_of_Binary_Tree_111.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Palindrome_Linked_List_234.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Path_Sum_112.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Remove_All_Adjacent_Duplicates_in_String_1047.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Remove_Duplicates_From_Sorting_List_83.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Remove_Element_27.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Remove_Linked_List_Elements_203.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Reverse_String_344.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Reverse_Words_in_a_String_III_557.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Rotate_String_796.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Same_Tree_100.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Shuffle_String_1528.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Split_a_String_in_Balanced_String_1221.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sum_of_Left_Leaves_404.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Symmetric_Tree_101.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Valid_Parentheses_20.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hand_of_straight.java" afterDir="false" />
-    </list>
+    <list default="true" id="e899dad9-5d4a-47a1-8ea7-11fea31cee19" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "benami171"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/benami171/LeetCode_Sol.git",
+    "accountId": "c809e09e-4d8d-441f-a1ce-42bda2e963d6"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -76,10 +48,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/benam/IdeaProjects/LeetCode_sol",
+    "last_opened_file_path": "C:/Users/benam/IdeaProjects/LeetCode_sol/LeetCode_sol",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -116,7 +87,7 @@
       <workItem from="1720255866504" duration="134000" />
       <workItem from="1720256120776" duration="451000" />
       <workItem from="1720257196239" duration="1219000" />
-      <workItem from="1720597910773" duration="2025000" />
+      <workItem from="1720597910773" duration="2454000" />
     </task>
     <servers />
   </component>
