@@ -5,6 +5,7 @@ public class Maximum_Depth_of_Binary_Tree_104 {
         int val;
         TreeNode left;
         TreeNode right;
+
     }
 
     public int maxDepth(TreeNode root) {
