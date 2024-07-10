@@ -1,0 +1,1448 @@
+Index: src/Best_Time_To_Buy_and_Sell_a_Stock_121.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Best_Time_To_Buy_and_Sell_a_Stock_121.java b/src/Best_Time_To_Buy_and_Sell_a_Stock_121.java
+new file mode 100644
+--- /dev/null	(date 1679389935123)
++++ b/src/Best_Time_To_Buy_and_Sell_a_Stock_121.java	(date 1679389935123)
+@@ -0,0 +1,15 @@
++class Solution {
++    public static int maxProfit(int[] prices) {
++        // prices = [7 , 1, 300, 1, 70, 800, 20]
++        int profit = 0;
++        int buyDay = 0;
++
++        for ( int i = 0 ; i  < prices.length ; i ++) {
++            if ( prices[buyDay] > prices[i]) {
++                buyDay = i;
++            }
++            profit = Math.max(profit, prices[i] - prices[buyDay]);
++        }
++        return profit;
++    }
++}
+\ No newline at end of file
+Index: src/Fibonacci_Number_509.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Fibonacci_Number_509.java b/src/Fibonacci_Number_509.java
+new file mode 100644
+--- /dev/null	(date 1679389922036)
++++ b/src/Fibonacci_Number_509.java	(date 1679389922036)
+@@ -0,0 +1,15 @@
++class Solution {
++    public int fib(int n){
++        if(n <= 1) return n;
++
++        int a = 0;
++        int b = 1;
++
++        while(n-- > 1) {
++            int sum = a + b;
++            a = b;
++            b = sum;
++        }
++        return b;
++    }
++}
+Index: src/Binary_Tree_Inorder_Traversal_94.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Binary_Tree_Inorder_Traversal_94.java b/src/Binary_Tree_Inorder_Traversal_94.java
+new file mode 100644
+--- /dev/null	(date 1679389954716)
++++ b/src/Binary_Tree_Inorder_Traversal_94.java	(date 1679389954716)
+@@ -0,0 +1,29 @@
++/**
++ * Definition for a binary tree node.
++ * public class TreeNode {
++ *     int val;
++ *     TreeNode left;
++ *     TreeNode right;
++ *     TreeNode() {}
++ *     TreeNode(int val) { this.val = val; }
++ *     TreeNode(int val, TreeNode left, TreeNode right) {
++ *         this.val = val;
++ *         this.left = left;
++ *         this.right = right;
++ *     }
++ * }
++ */
++class Solution {
++    public List<Integer> inorderTraversal(TreeNode root) {
++        return dfs(root, new ArrayList());
++    }
++
++    private List<Integer> dfs(TreeNode node,List<Integer> list){
++        if(node == null) return list;
++        list = dfs(node.left,list);
++        list.add(node.val);
++        list = dfs(node.right,list);
++        return list;
++    }
++}
++
+Index: src/Binary_Tree_Preorder_Traversal_144.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Binary_Tree_Preorder_Traversal_144.java b/src/Binary_Tree_Preorder_Traversal_144.java
+new file mode 100644
+--- /dev/null	(date 1679389945903)
++++ b/src/Binary_Tree_Preorder_Traversal_144.java	(date 1679389945903)
+@@ -0,0 +1,32 @@
++/**
++ * Definition for a binary tree node.
++ * public class TreeNode {
++ *     int val;
++ *     TreeNode left;
++ *     TreeNode right;
++ *     TreeNode() {}
++ *     TreeNode(int val) { this.val = val; }
++ *     TreeNode(int val, TreeNode left, TreeNode right) {
++ *         this.val = val;
++ *         this.left = left;
++ *         this.right = right;
++ *     }
++ * }
++ */
++class Solution {
++
++    public List<Integer> preorderTraversal(TreeNode root) {
++        return dfs(root, new ArrayList());
++    }
++
++    private List<Integer> dfs(TreeNode node,List<Integer> list){
++        if(node == null) return list;
++        list.add(node.val);
++        list = dfs(node.left,list);
++        list = dfs(node.right,list);
++        return list;
++    }
++
++
++
++}
+\ No newline at end of file
+Index: src/Find_Target_Indices_After_Sorting_Array_2089.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Find_Target_Indices_After_Sorting_Array_2089.java b/src/Find_Target_Indices_After_Sorting_Array_2089.java
+new file mode 100644
+--- /dev/null	(date 1679389977389)
++++ b/src/Find_Target_Indices_After_Sorting_Array_2089.java	(date 1679389977389)
+@@ -0,0 +1,27 @@
++class Solution {
++    public List<Integer> targetIndices(int[] nums, int target) {
++
++        List<Integer> ans = new ArrayList<>();
++
++        for ( int i = 0 ; i < nums.length-1 ; i ++ ) {
++            for ( int j = 0  ; j < nums.length-i-1 ; j ++ ) {
++                if (nums[j] > nums[j+1] ){
++                    swap(nums,j,j+1);
++                }
++            }
++        }
++
++        for( int i = 0 ; i < nums.length ; i ++ ){
++            if ( nums[i] == target){
++                ans.add(i);
++            }
++        }
++        return ans;
++    }
++
++    private static void swap (int[] nums, int i, int j){
++        int temp = nums[i];
++        nums[i] = nums[j];
++        nums[j] = temp;
++    }
++}
+Index: src/Maximum_Product_Difference_Between_Two_Pairs_1913.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Maximum_Product_Difference_Between_Two_Pairs_1913.java b/src/Maximum_Product_Difference_Between_Two_Pairs_1913.java
+new file mode 100644
+--- /dev/null	(date 1679389967619)
++++ b/src/Maximum_Product_Difference_Between_Two_Pairs_1913.java	(date 1679389967619)
+@@ -0,0 +1,7 @@
++class Solution {
++    public int maxProductDifference(int[] nums) {
++        Arrays.sort(nums);
++        int size = nums.length;
++        return ((nums[size-1]*nums[size-2]) - ( nums[0]*nums[1])) ;
++    }
++}
+\ No newline at end of file
+Index: src/Remove_Linked_List_Elements_203.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Remove_Linked_List_Elements_203.java b/src/Remove_Linked_List_Elements_203.java
+new file mode 100644
+--- /dev/null	(date 1679389999131)
++++ b/src/Remove_Linked_List_Elements_203.java	(date 1679389999131)
+@@ -0,0 +1,29 @@
++/**
++ * Definition for singly-linked list.
++ * public class ListNode {
++ *     int val;
++ *     ListNode next;
++ *     ListNode() {}
++ *     ListNode(int val) { this.val = val; }
++ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
++ * }
++ */
++class Solution {
++    public ListNode removeElements(ListNode head, int val) {
++
++        while ( head != null && head.val == val){
++            head = head.next;
++        }
++        ListNode current_node = head;
++        while ( current_node != null && current_node.next != null) {
++
++            if ( current_node.next.val == val){
++                current_node.next = current_node.next.next;
++
++            } else {
++                current_node = current_node.next;
++            }
++        }
++        return head;
++    }
++}
+\ No newline at end of file
+Index: src/How_Many_Numbers_Are_Smaller_Than_The_Current_Number_1365.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/How_Many_Numbers_Are_Smaller_Than_The_Current_Number_1365.java b/src/How_Many_Numbers_Are_Smaller_Than_The_Current_Number_1365.java
+new file mode 100644
+--- /dev/null	(date 1679389985107)
++++ b/src/How_Many_Numbers_Are_Smaller_Than_The_Current_Number_1365.java	(date 1679389985107)
+@@ -0,0 +1,21 @@
++class Solution {
++    public int[] smallerNumbersThanCurrent(int[] nums) {
++        int[] bucket = new int[101];
++        int[] ans = new int[nums.length];
++
++        for ( int i = 0 ; i < nums.length ; i ++) {
++            bucket[nums[i]]++;
++        }
++        for (int i = 1 ; i <= 100; i++) {
++            bucket[i] += bucket[i-1];
++        }
++
++        for (int i = 0; i < nums.length; i++) {
++            if (nums[i] == 0)
++                ans[i] = 0;
++            else
++                ans[i] = bucket[nums[i] - 1];
++        }
++        return ans;
++    }
++}
+\ No newline at end of file
+Index: src/Remove_Element_27.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Remove_Element_27.java b/src/Remove_Element_27.java
+new file mode 100644
+--- /dev/null	(date 1679390039541)
++++ b/src/Remove_Element_27.java	(date 1679390039541)
+@@ -0,0 +1,17 @@
++class Solution {
++    public int removeElement(int[] nums, int val) {
++        int final_size = 0;
++        if (nums.length == 0) {
++            return 0;
++        }
++        for ( int i = 0 ; i < nums.length ; i ++ ) {
++            if ( nums[i] != val){
++
++                nums[final_size] = nums[i];
++                final_size++;
++            }
++        }
++        return final_size;
++    }
++
++}
+\ No newline at end of file
+Index: src/Remove_Duplicates_From_Sorting_List_83.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Remove_Duplicates_From_Sorting_List_83.java b/src/Remove_Duplicates_From_Sorting_List_83.java
+new file mode 100644
+--- /dev/null	(date 1679390011166)
++++ b/src/Remove_Duplicates_From_Sorting_List_83.java	(date 1679390011166)
+@@ -0,0 +1,25 @@
++/**
++ * Definition for singly-linked list.
++ * public class ListNode {
++ *     int val;
++ *     ListNode next;
++ *     ListNode() {}
++ *     ListNode(int val) { this.val = val; }
++ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
++ * }
++ */
++class Solution {
++    public ListNode deleteDuplicates(ListNode head) {
++
++        ListNode current_node = head;
++        while ( current_node != null && current_node.next != null) {
++            if (current_node.val == current_node.next.val) {
++                current_node.next = current_node.next.next;
++            } else {
++                current_node = current_node.next;
++            }
++        }
++
++        return head;
++    }
++}
+\ No newline at end of file
+Index: src/Reverse_String_344.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Reverse_String_344.java b/src/Reverse_String_344.java
+new file mode 100644
+--- /dev/null	(date 1679390070003)
++++ b/src/Reverse_String_344.java	(date 1679390070003)
+@@ -0,0 +1,13 @@
++class Solution {
++    public static void reverseString(char[] s) {
++
++        Stack<Character> stack = new Stack<>();
++        for ( int i = 0 ; i < s.length ; i++){
++            stack.push(s[i]);
++        }
++        for ( int j = 0 ; j < s.length ; j++) {
++            s[j] = stack.pop();
++        }
++    }
++
++}
+\ No newline at end of file
+Index: src/Longest_Common_Prefix_14.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Longest_Common_Prefix_14.java b/src/Longest_Common_Prefix_14.java
+new file mode 100644
+--- /dev/null	(date 1679390059891)
++++ b/src/Longest_Common_Prefix_14.java	(date 1679390059891)
+@@ -0,0 +1,15 @@
++class Solution {
++    public  String longestCommonPrefix(String[] strs) {
++        if ( strs.length < 1 ){
++            return "";
++        }
++        String prefix = strs[0];
++        for (int i = 1; i < strs.length ; i++) {
++            while (strs[i].indexOf(prefix) != 0) {
++                prefix = prefix.substring(0,prefix.length()-1);
++            }
++
++        }
++        return prefix;
++    }
++}
+\ No newline at end of file
+Index: src/Rotate_String_796.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Rotate_String_796.java b/src/Rotate_String_796.java
+new file mode 100644
+--- /dev/null	(date 1679390093404)
++++ b/src/Rotate_String_796.java	(date 1679390093404)
+@@ -0,0 +1,6 @@
++class Solution {
++    public boolean rotateString(String s, String goal) {
++        String doubleS = s + s;
++        return s.length() == goal.length() && doubleS.contains(goal);
++    }
++}
+Index: src/Remove_All_Adjacent_Duplicates_in_String_1047.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Remove_All_Adjacent_Duplicates_in_String_1047.java b/src/Remove_All_Adjacent_Duplicates_in_String_1047.java
+new file mode 100644
+--- /dev/null	(date 1679390082892)
++++ b/src/Remove_All_Adjacent_Duplicates_in_String_1047.java	(date 1679390082892)
+@@ -0,0 +1,15 @@
++class Solution {
++    public static String removeDuplicates(String s) {
++        char[] ans = s.toCharArray();
++        int length = s.length();
++        int i = 0;
++
++        for (int j=0 ; j < length; j++,i++) {
++            ans[i] = ans[j];
++            if (i > 0 && ans[i] == ans[i -1]){
++                i = i - 2;
++            }
++        }
++        return new String(ans,0,i);
++    }
++}
+\ No newline at end of file
+Index: src/Balanced_Binary_Tree_110.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Balanced_Binary_Tree_110.java b/src/Balanced_Binary_Tree_110.java
+new file mode 100644
+--- /dev/null	(date 1720600031359)
++++ b/src/Balanced_Binary_Tree_110.java	(date 1720600031359)
+@@ -0,0 +1,38 @@
++class TreeNode {
++    int val;
++    TreeNode left;
++    TreeNode right;
++
++    TreeNode() {
++    }
++
++    TreeNode(int val) {
++        this.val = val;
++    }
++
++    TreeNode(int val, TreeNode left, TreeNode right) {
++        this.val = val;
++        this.left = left;
++        this.right = right;
++    }
++
++
++    public static class Balanced_Binary_Tree_110 {
++        public boolean isBalanced(TreeNode root) {
++            if (root == null) {
++                return true;
++            }
++            if (Math.abs(height(root.left) - height(root.right)) > 1) {
++                return false;
++            }
++            return isBalanced(root.left) && isBalanced(root.right);
++        }
++
++        public int height(TreeNode root) {
++            if (root == null) {
++                return 0;
++            }
++            return Math.max(height(root.left), height(root.right)) + 1;
++        }
++    }
++}
+\ No newline at end of file
+Index: src/Split_a_String_in_Balanced_String_1221.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Split_a_String_in_Balanced_String_1221.java b/src/Split_a_String_in_Balanced_String_1221.java
+new file mode 100644
+--- /dev/null	(date 1679390105336)
++++ b/src/Split_a_String_in_Balanced_String_1221.java	(date 1679390105336)
+@@ -0,0 +1,22 @@
++class Solution {
++    public int balancedStringSplit(String s) {
++        int rs = 0;
++        int ls = 0;
++        int sum =0;
++        if ( s == null || s.length() == 0){
++            return 0;
++        }
++        for (int i = 0 ; i < s.length() ; i++) {
++            char c = s.charAt(i);
++            if (c == 'L'){
++                ls++;
++            } else {
++                rs++;
++            }
++            if (ls == rs){
++                sum++;
++            }
++        }
++        return sum;
++    }
++}
+\ No newline at end of file
+Index: src/Path_Sum_112.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Path_Sum_112.java b/src/Path_Sum_112.java
+new file mode 100644
+--- /dev/null	(date 1679390138494)
++++ b/src/Path_Sum_112.java	(date 1679390138494)
+@@ -0,0 +1,46 @@
++/**
++ * Definition for a binary tree node.
++ * public class TreeNode {
++ *     int val;
++ *     TreeNode left;
++ *     TreeNode right;
++ *     TreeNode() {}
++ *     TreeNode(int val) { this.val = val; }
++ *     TreeNode(int val, TreeNode left, TreeNode right) {
++ *         this.val = val;
++ *         this.left = left;
++ *         this.right = right;
++ *     }
++ * }
++ */
++class Solution {
++    public boolean hasPathSum(TreeNode root, int targetSum) {
++        if ( root == null){
++            return false;
++        }
++        Stack<TreeNode> node_stack = new Stack();
++        Stack<Integer> sum_stack = new Stack();
++
++        node_stack.add(root);
++        sum_stack.add(targetSum-root.val);
++
++        while ( !node_stack.isEmpty()) {
++            TreeNode current_node = node_stack.pop();
++            int current_sum = sum_stack.pop();
++            if ( current_node.left == null && current_node.right == null && current_sum == 0){
++                return true;
++            }
++
++            if ( current_node.left != null){
++                node_stack.add(current_node.left);
++                sum_stack.add(current_sum - current_node.left.val);
++
++            }
++            if ( current_node.right != null){
++                node_stack.add(current_node.right);
++                sum_stack.add(current_sum - current_node.right.val);
++            }
++        }
++        return false;
++    }
++}
+\ No newline at end of file
+Index: src/Same_Tree_100.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Same_Tree_100.java b/src/Same_Tree_100.java
+new file mode 100644
+--- /dev/null	(date 1679390130437)
++++ b/src/Same_Tree_100.java	(date 1679390130437)
+@@ -0,0 +1,32 @@
++/**
++ * Definition for a binary tree node.
++ * public class TreeNode {
++ *     int val;
++ *     TreeNode left;
++ *     TreeNode right;
++ *     TreeNode() {}
++ *     TreeNode(int val) { this.val = val; }
++ *     TreeNode(int val, TreeNode left, TreeNode right) {
++ *         this.val = val;
++ *         this.left = left;
++ *         this.right = right;
++ *     }
++ * }
++ */
++class Solution {
++    public boolean isSameTree(TreeNode p, TreeNode q) {
++        if ( p == null && q == null){
++            return true;
++        }
++        if ( p == null || q == null){
++            return false;
++        }
++
++        if ( q.val != p.val) {
++            return false;
++        }
++
++        return isSameTree(p.left , q.left) && isSameTree(p.right ,q.right);
++    }
++}
++
+Index: src/Merge_Two_Binary_Trees_617.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Merge_Two_Binary_Trees_617.java b/src/Merge_Two_Binary_Trees_617.java
+new file mode 100644
+--- /dev/null	(date 1679390193636)
++++ b/src/Merge_Two_Binary_Trees_617.java	(date 1679390193636)
+@@ -0,0 +1,25 @@
++/**
++ * Definition for a binary tree node.
++ * public class TreeNode {
++ *     int val;
++ *     TreeNode left;
++ *     TreeNode right;
++ *     TreeNode() {}
++ *     TreeNode(int val) { this.val = val; }
++ *     TreeNode(int val, TreeNode left, TreeNode right) {
++ *         this.val = val;
++ *         this.left = left;
++ *         this.right = right;
++ *     }
++ * }
++ */
++class Solution {
++    public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
++        if (root1 == null){ return root2; }
++        if (root2 == null){ return root1; }
++        root1.val += root2.val;
++        root1.left = mergeTrees(root1.left, root2.left);
++        root1.right = mergeTrees(root1.right, root2.right);
++        return root1;
++    }
++}
+\ No newline at end of file
+Index: src/Minimum_Depth_of_Binary_Tree_111.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Minimum_Depth_of_Binary_Tree_111.java b/src/Minimum_Depth_of_Binary_Tree_111.java
+new file mode 100644
+--- /dev/null	(date 1679390146559)
++++ b/src/Minimum_Depth_of_Binary_Tree_111.java	(date 1679390146559)
+@@ -0,0 +1,36 @@
++/**
++ * Definition for a binary tree node.
++ * public class TreeNode {
++ *     int val;
++ *     TreeNode left;
++ *     TreeNode right;
++ *     TreeNode() {}
++ *     TreeNode(int val) { this.val = val; }
++ *     TreeNode(int val, TreeNode left, TreeNode right) {
++ *         this.val = val;
++ *         this.left = left;
++ *         this.right = right;
++ *     }
++ * }
++ */
++class Solution {
++    public int minDepth(TreeNode root) {
++
++        if ( root == null){
++            return 0;
++        }
++
++
++        if (root.left == null && root.right == null){
++            return 1;
++        }
++        if ( root.left == null){
++            return 1 + minDepth(root.right);
++        }
++        if ( root.right == null){
++            return 1 + minDepth(root.left);
++        }
++
++        return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
++    }
++}
+\ No newline at end of file
+Index: src/Linked_List_Cycle_14.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Linked_List_Cycle_14.java b/src/Linked_List_Cycle_14.java
+new file mode 100644
+--- /dev/null	(date 1679390223374)
++++ b/src/Linked_List_Cycle_14.java	(date 1679390223374)
+@@ -0,0 +1,30 @@
++/**
++ * Definition for singly-linked list.
++ * class ListNode {
++ *     int val;
++ *     ListNode next;
++ *     ListNode(int x) {
++ *         val = x;
++ *         next = null;
++ *     }
++ * }
++ */
++public class Solution {
++    public boolean hasCycle(ListNode head) {
++        if(head == null){return false;}
++
++        ListNode slow = head;
++        ListNode fast = head.next;
++
++
++        while ( slow != fast){
++            if( fast == null || fast.next == null) return false;
++
++            slow = slow.next;
++            fast = fast.next.next;
++        }
++        return true;
++
++
++    }
++}
+\ No newline at end of file
+Index: src/Merge_Two_Sorted_List_21.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Merge_Two_Sorted_List_21.java b/src/Merge_Two_Sorted_List_21.java
+new file mode 100644
+--- /dev/null	(date 1679390209862)
++++ b/src/Merge_Two_Sorted_List_21.java	(date 1679390209862)
+@@ -0,0 +1,39 @@
++/**
++ * Definition for singly-linked list.
++ * public class ListNode {
++ *     int val;
++ *     ListNode next;
++ *     ListNode() {}
++ *     ListNode(int val) { this.val = val; }
++ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
++ * }
++ */
++class Solution {
++    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
++        if (list1 == null) return list2;
++        if (list2 == null) return list1;
++        ListNode temp_node = new ListNode(0);
++        ListNode current_node = temp_node;
++
++
++        while (list1 != null && list2 != null){
++            if(list1.val < list2.val){
++                current_node.next = list1;
++                list1 = list1.next;
++            } else {
++                current_node.next = list2;
++                list2 = list2.next;
++            }
++            current_node = current_node.next;
++        }
++        if (list1 != null){
++            current_node.next = list1;
++            list1 = list1.next;
++        }
++        if (list2 != null){
++            current_node.next = list2;
++            list2 = list2.next;
++        }
++        return temp_node.next;
++    }
++}
+\ No newline at end of file
+Index: LeetCode_sol.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LeetCode_sol.iml b/LeetCode_sol.iml
+new file mode 100644
+--- /dev/null	(date 1679210962067)
++++ b/LeetCode_sol.iml	(date 1679210962067)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: src/Invert_Binary_Tree_226.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Invert_Binary_Tree_226.java b/src/Invert_Binary_Tree_226.java
+new file mode 100644
+--- /dev/null	(date 1679390158297)
++++ b/src/Invert_Binary_Tree_226.java	(date 1679390158297)
+@@ -0,0 +1,32 @@
++/**
++ * Definition for a binary tree node.
++ * public class TreeNode {
++ *     int val;
++ *     TreeNode left;
++ *     TreeNode right;
++ *     TreeNode() {}
++ *     TreeNode(int val) { this.val = val; }
++ *     TreeNode(int val, TreeNode left, TreeNode right) {
++ *         this.val = val;
++ *         this.left = left;
++ *         this.right = right;
++ *     }
++ * }
++ */
++class Solution {
++    public TreeNode invertTree(TreeNode root) {
++        if ( root == null){
++            return null;
++        }
++        if ( root.left == null && root.right == null){
++            return root;
++        }
++
++        TreeNode leftNode = invertTree(root.left);
++        TreeNode rightNode = invertTree(root.right);
++        root.left = rightNode;
++        root.right = leftNode;
++
++        return root;
++    }
++}
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1679210962188)
++++ b/.idea/modules.xml	(date 1679210962188)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/LeetCode_sol.iml" filepath="$PROJECT_DIR$/LeetCode_sol.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+new file mode 100644
+--- /dev/null	(date 1679390189171)
++++ b/.idea/uiDesigner.xml	(date 1679390189171)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1679210966344)
++++ b/.idea/.gitignore	(date 1679210966344)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: src/hand_of_straight.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/hand_of_straight.java b/src/hand_of_straight.java
+new file mode 100644
+--- /dev/null	(date 1719252739811)
++++ b/src/hand_of_straight.java	(date 1719252739811)
+@@ -0,0 +1,37 @@
++import java.util.TreeMap;
++
++public class hand_of_straight {
++    public boolean isNStraightHand(int[] hand, int W) {
++        if (hand.length % W != 0) {
++            return false;
++        }
++        TreeMap<Integer, Integer> card_counts = new TreeMap<>();
++        for (int card : hand) {
++            if (!card_counts.containsKey(card)) {
++                System.out.println("inserting card key:" + card);
++                card_counts.put(card, 1);
++            } else {
++                card_counts.put(card,card_counts.get(card)+1);
++                System.out.println("inserting into card: " + card + "the key " + card + 1);
++            }
++        }
++
++        while(!card_counts.isEmpty()){
++            int min = card_counts.firstKey();
++            for (int card = min ; card < min + W ; card++){
++                if (!card_counts.containsKey(card)) return false;
++                int count = card_counts.get(card);
++                if(count == 1) card_counts.remove(card);
++                else card_counts.replace(card,count-1);
++            }
++        }
++        return true;
++    }
++
++    public static void main(String[] args) {
++        int[] hand1 = {1,2,3,6,2,3,4,7,8};
++        int groupSize = 3;
++        
++    }
++}
++
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1679210962273)
++++ b/.idea/misc.xml	(date 1679210962273)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="19" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/Palindrome_Linked_List_234.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Palindrome_Linked_List_234.java b/src/Palindrome_Linked_List_234.java
+new file mode 100644
+--- /dev/null	(date 1679389707283)
++++ b/src/Palindrome_Linked_List_234.java	(date 1679389707283)
+@@ -0,0 +1,58 @@
++/**
++ * Definition for singly-linked list.
++ * public class ListNode {
++ *     int val;
++ *     ListNode next;
++ *     ListNode() {}
++ *     ListNode(int val) { this.val = val; }
++ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
++ * }
++ */
++
++
++
++
++// 1 2 3 2 1
++class Solution {
++    public boolean isPalindrome(ListNode head) {
++        if (head == null) {
++            return true; // an empty list is considered a palindrome
++        }
++
++        ListNode slow = head;
++        ListNode fast = head;
++        while ( fast != null && fast.next != null) {
++            slow = slow.next;
++            fast = fast.next.next;
++        }
++        slow = reversed(slow);
++        fast = head;
++        while ( slow != null){
++            if (fast.val != slow.val){
++                return false;
++
++            }
++            slow = slow.next;
++            fast = fast.next;
++
++        }
++        return true;
++    }
++    // 1 2 3 2 1
++// head = 3,2,1,[]
++// prev = [],3,2,1
++// next = 2,1,[]
++// head.next = [],3 ,2
++    private ListNode reversed(ListNode head){
++        ListNode prev = null;
++
++        while ( head != null){
++            ListNode next = head.next;
++            head.next = prev;
++            prev = head;
++            head = next;
++        }
++        return prev;
++
++    }
++}
+\ No newline at end of file
+Index: src/Maximum_Depth_of_Binary_Tree_104.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Maximum_Depth_of_Binary_Tree_104.java b/src/Maximum_Depth_of_Binary_Tree_104.java
+new file mode 100644
+--- /dev/null	(date 1720600031354)
++++ b/src/Maximum_Depth_of_Binary_Tree_104.java	(date 1720600031354)
+@@ -0,0 +1,10 @@
++
++public class Maximum_Depth_of_Binary_Tree_104 {
++
++        public int maxDepth(TreeNode root) {
++            if ( root == null) return 0;
++            return 1+ Math.max(maxDepth(root.left),maxDepth(root.right));
++
++        }
++    }
++
+Index: src/Symmetric_Tree_101.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Symmetric_Tree_101.java b/src/Symmetric_Tree_101.java
+new file mode 100644
+--- /dev/null	(date 1679389746772)
++++ b/src/Symmetric_Tree_101.java	(date 1679389746772)
+@@ -0,0 +1,31 @@
++/**
++ * Definition for a binary tree node.
++ * public class TreeNode {
++ *     int val;
++ *     TreeNode left;
++ *     TreeNode right;
++ *     TreeNode() {}
++ *     TreeNode(int val) { this.val = val; }
++ *     TreeNode(int val, TreeNode left, TreeNode right) {
++ *         this.val = val;
++ *         this.left = left;
++ *         this.right = right;
++ *     }
++ * }
++ */
++class Solution {
++    public boolean isSymmetric(TreeNode root) {
++        return isMirror(root,root);
++    }
++
++    public boolean isMirror(TreeNode t1, TreeNode t2){
++        if (t1 == null && t2 == null) {
++            return true;
++        }
++
++        if (t1 == null || t2 == null) {
++            return false;
++        }
++        return isMirror(t1.left,t2.right) && isMirror(t1.right,t2.left) && t1.val == t2.val;
++    }
++}
+\ No newline at end of file
+Index: src/Find_First_Palindromic_String_in_the_Array_2108.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Find_First_Palindromic_String_in_the_Array_2108.java b/src/Find_First_Palindromic_String_in_the_Array_2108.java
+new file mode 100644
+--- /dev/null	(date 1679389728098)
++++ b/src/Find_First_Palindromic_String_in_the_Array_2108.java	(date 1679389728098)
+@@ -0,0 +1,24 @@
++class Solution {
++    public String firstPalindrome(String[] words) {
++        String ans = "";
++        for ( int i = 0 ; i < words.length ; i ++){
++            if(isPalindrome(words[i])){
++                ans = words[i];
++                break;
++            }
++        }
++        return ans;
++    }
++
++
++    public boolean isPalindrome(String s){
++        int n = s.length();
++        for ( int i = 0 ; i < n; i++){
++            if (s.charAt(i) != s.charAt(n-i-1)){
++                return false;
++            }
++        }
++        return true;
++
++    }
++}
+\ No newline at end of file
+Index: src/Reverse_Words_in_a_String_III_557.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Reverse_Words_in_a_String_III_557.java b/src/Reverse_Words_in_a_String_III_557.java
+new file mode 100644
+--- /dev/null	(date 1679389822302)
++++ b/src/Reverse_Words_in_a_String_III_557.java	(date 1679389822302)
+@@ -0,0 +1,25 @@
++class Solution {
++    // "sdfasdf sdfadf asdfasf"
++    // [asdfsadf,asdfasdf,asdfasdf]
++    //
++    public String reverseWords(String s) {
++        String result = "";
++        String[] words = s.split(" ");
++        for ( int i = 0 ; i < words.length ; i++){
++            result += reverseWord(words[i]) + " ";
++        }
++        return result.substring(0,result.length()-1);
++    }
++
++
++// s = ma kore
++// ans = erok am
++
++    private String reverseWord(String s){
++        String ans = "";
++        for ( int i = s.length()-1 ; i >= 0 ; i--){
++            ans += s.charAt(i);
++        }
++        return ans;
++    }
++}
+Index: src/Sum_of_Left_Leaves_404.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Sum_of_Left_Leaves_404.java b/src/Sum_of_Left_Leaves_404.java
+new file mode 100644
+--- /dev/null	(date 1679389770343)
++++ b/src/Sum_of_Left_Leaves_404.java	(date 1679389770343)
+@@ -0,0 +1,36 @@
++/**
++ * Definition for a binary tree node.
++ * public class TreeNode {
++ *     int val;
++ *     TreeNode left;
++ *     TreeNode right;
++ *     TreeNode() {}
++ *     TreeNode(int val) { this.val = val; }
++ *     TreeNode(int val, TreeNode left, TreeNode right) {
++ *         this.val = val;
++ *         this.left = left;
++ *         this.right = right;
++ *     }
++ * }
++ */
++class Solution {
++    public int sumOfLeftLeaves(TreeNode root) {
++        int ans = 0;
++        if ( root == null) return 0;
++        if (isLeaf(root.left)){
++            ans += root.left.val;
++        }
++        return ans + sumOfLeftLeaves(root.left)+sumOfLeftLeaves(root.right);
++    }
++
++
++
++    public boolean isLeaf (TreeNode root){
++        if ( root == null) return false;
++        if(root.left == null && root.right == null){
++            return true;
++        }
++        return false;
++    }
++
++}
+\ No newline at end of file
+Index: src/Valid_Parentheses_20.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Valid_Parentheses_20.java b/src/Valid_Parentheses_20.java
+new file mode 100644
+--- /dev/null	(date 1679389872437)
++++ b/src/Valid_Parentheses_20.java	(date 1679389872437)
+@@ -0,0 +1,22 @@
++class Solution {
++    public static boolean isValid(String s) {
++        if (s.length() < 2) return false;
++        Stack<Character> stack = new Stack<>();
++        for ( int i = 0 ; i < s.length() ; i++) {
++
++            if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[' ){
++                stack.push(s.charAt(i));
++            } else if ( s.charAt(i) == ')' && !stack.isEmpty() && stack.peek() == '(')
++                stack.pop();
++            else if ( s.charAt(i) == ']' && !stack.isEmpty() && stack.peek() == '[')
++                stack.pop();
++            else if ( s.charAt(i) == '}' && !stack.isEmpty() && stack.peek() == '{')
++                stack.pop();
++            else
++                return false;
++        }
++        return stack.isEmpty();
++
++    }
++
++}
+\ No newline at end of file
+Index: src/Binary_Tree_Postorder_Traversal_145.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Binary_Tree_Postorder_Traversal_145.java b/src/Binary_Tree_Postorder_Traversal_145.java
+new file mode 100644
+--- /dev/null	(date 1679389854068)
++++ b/src/Binary_Tree_Postorder_Traversal_145.java	(date 1679389854068)
+@@ -0,0 +1,30 @@
++/**
++ * Definition for a binary tree node.
++ * public class TreeNode {
++ *     int val;
++ *     TreeNode left;
++ *     TreeNode right;
++ *     TreeNode() {}
++ *     TreeNode(int val) { this.val = val; }
++ *     TreeNode(int val, TreeNode left, TreeNode right) {
++ *         this.val = val;
++ *         this.left = left;
++ *         this.right = right;
++ *     }
++ * }
++ */
++class Solution {
++    public List<Integer> postorderTraversal(TreeNode root) {
++        return helper(root,new ArrayList());
++    }
++
++    public List<Integer> helper(TreeNode root , List<Integer> ans) {
++        if ( root == null) return ans;
++        Stack<TreeNode> node_stack = new Stack<>();
++        ans = helper(root.left,ans);
++        ans = helper(root.right,ans);
++        ans.add(root.val);
++        return ans;
++    }
++
++}
+Index: src/Fizz_Buzz_412.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Fizz_Buzz_412.java b/src/Fizz_Buzz_412.java
+new file mode 100644
+--- /dev/null	(date 1720255615016)
++++ b/src/Fizz_Buzz_412.java	(date 1720255615016)
+@@ -0,0 +1,24 @@
++import java.util.ArrayList;
++import java.util.List;
++
++class Fizz_Buzz_412 {
++    public static List<String> fizzBuzz(int n) {
++        List<String> ans = new ArrayList<>();
++        for (int i = 1; ans.size() < n; i++) {
++            if (i % 3 == 0 && i % 5 != 0) {
++                ans.add("Fizz");
++            }
++            if (i % 5 == 0 && i % 3 != 0) {
++                ans.add("Buzz");
++            }
++            if (i%3 == 0 && i%5 == 0) {
++                ans.add("FizzBuzz");
++            }
++            if (i%3 != 0 && i%5 != 0) {
++                ans.add(String.valueOf(i));
++            }
++        }
++        return ans;
++
++    }
++}
+\ No newline at end of file
+Index: src/Shuffle_String_1528.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Shuffle_String_1528.java b/src/Shuffle_String_1528.java
+new file mode 100644
+--- /dev/null	(date 1679389885736)
++++ b/src/Shuffle_String_1528.java	(date 1679389885736)
+@@ -0,0 +1,9 @@
++class Solution {
++    public String restoreString(String s, int[] indices) {
++        StringBuilder ans = new StringBuilder(s);
++        for (int i = 0; i < indices.length; i++) {
++            ans.setCharAt(indices[i],s.charAt(i));
++        }
++        return ans.toString();
++    }
++}
+\ No newline at end of file
