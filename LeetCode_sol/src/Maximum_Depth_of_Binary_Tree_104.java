@@ -2,7 +2,6 @@
 public class Maximum_Depth_of_Binary_Tree_104 {
 
     public static class TreeNode {
-        int val;
         TreeNode left;
         TreeNode right;
 
