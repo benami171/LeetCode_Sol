@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution {
+class Balanced_Binary_Tree_110 {
     public boolean isBalanced(TreeNode root) {
         if (root == null){
             return true;

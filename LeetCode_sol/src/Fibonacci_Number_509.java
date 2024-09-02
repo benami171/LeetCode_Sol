@@ -1,4 +1,4 @@
-class Solution {
+class Fibonacci_Number_509 {
     public int fib(int n){
         if(n <= 1) return n;
 

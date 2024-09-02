@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -13,7 +16,8 @@
  *     }
  * }
  */
-class Solution {
+
+class Binary_Tree_Inorder_Traversal_94 {
     public List<Integer> inorderTraversal(TreeNode root) {
         return dfs(root, new ArrayList());
     }

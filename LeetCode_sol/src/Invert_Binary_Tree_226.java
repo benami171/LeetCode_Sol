@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution {
+class Invert_Binary_Tree_226 {
     public TreeNode invertTree(TreeNode root) {
         if ( root == null){
             return null;
