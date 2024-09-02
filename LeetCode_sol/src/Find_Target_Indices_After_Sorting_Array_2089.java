@@ -1,4 +1,7 @@
-class Solution {
+import java.util.ArrayList;
+import java.util.List;
+
+class Find_Target_Indices_After_Sorting_Array_2089 {
     public List<Integer> targetIndices(int[] nums, int target) {
 
         List<Integer> ans = new ArrayList<>();

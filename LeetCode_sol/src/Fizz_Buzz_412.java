@@ -1,4 +1,7 @@
-class Solution {
+import java.util.ArrayList;
+import java.util.List;
+
+class Fizz_Buzz_412 {
     public static List<String> fizzBuzz(int n) {
         List<String> ans = new ArrayList<>();
         for (int i = 1; ans.size() < n; i++) {

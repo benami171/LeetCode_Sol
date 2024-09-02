@@ -1,4 +1,4 @@
-class Solution {
+class Find_First_Palindromic_String_in_the_Array_2108 {
     public String firstPalindrome(String[] words) {
         String ans = "";
         for ( int i = 0 ; i < words.length ; i ++){

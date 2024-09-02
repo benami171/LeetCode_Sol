@@ -1,4 +1,4 @@
-class Solution {
+class How_Many_Numbers_Are_Smaller_Than_The_Current_Number_1365 {
     public int[] smallerNumbersThanCurrent(int[] nums) {
         int[] bucket = new int[101];
         int[] ans = new int[nums.length];
