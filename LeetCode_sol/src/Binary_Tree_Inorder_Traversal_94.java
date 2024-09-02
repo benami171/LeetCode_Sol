@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution {
+class Binary_Tree_Inorder_Traversal_94 {
     public List<Integer> inorderTraversal(TreeNode root) {
         return dfs(root, new ArrayList());
     }
