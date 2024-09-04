@@ -13,7 +13,7 @@
 
 
 // 1 2 3 2 1
-class Solution {
+class Palindrome_Linked_List_234 {
     public boolean isPalindrome(ListNode head) {
         if (head == null) {
             return true; // an empty list is considered a palindrome
