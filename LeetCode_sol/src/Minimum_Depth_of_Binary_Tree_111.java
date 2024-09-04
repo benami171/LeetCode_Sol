@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution {
+class Minimum_Depth_of_Binary_Tree_111 {
     public int minDepth(TreeNode root) {
         if (root == null){return 0;}
         if (root.left == null && root.right == null){
