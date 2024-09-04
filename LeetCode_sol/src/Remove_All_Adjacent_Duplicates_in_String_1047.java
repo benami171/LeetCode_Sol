@@ -1,4 +1,4 @@
-class Solution {
+class Remove_All_Adjacent_Duplicates_in_String_1047 {
     public static String removeDuplicates(String s) {
         char[] ans = s.toCharArray();
         int length = s.length();
