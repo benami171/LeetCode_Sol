@@ -8,7 +8,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class Remove_Duplicates_From_Sorting_List_83 {
     public ListNode deleteDuplicates(ListNode head) {
 
         ListNode current_node = head;
