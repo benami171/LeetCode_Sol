@@ -1,4 +1,4 @@
-class Solution {
+class Reverse_Words_in_a_String_III_557 {
     // "sdfasdf sdfadf asdfasf"
     // [asdfsadf,asdfasdf,asdfasdf]
     //

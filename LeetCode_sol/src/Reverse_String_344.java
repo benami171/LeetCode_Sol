@@ -1,4 +1,4 @@
-class Solution {
+class Reverse_String_344 {
     public static void reverseString(char[] s) {
 
         Stack<Character> stack = new Stack<>();
