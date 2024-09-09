@@ -8,7 +8,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class Remove_Linked_List_Elements_203 {
     public ListNode removeElements(ListNode head, int val) {
 
         while (head != null && head.val == val){

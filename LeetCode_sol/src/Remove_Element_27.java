@@ -1,4 +1,4 @@
-class Solution {
+class Remove_Element_27 {
     
     public int removeElement(int[] nums, int val) {
         int final_size = 0;
