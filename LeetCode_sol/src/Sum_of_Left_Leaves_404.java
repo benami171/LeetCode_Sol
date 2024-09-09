@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution {
+class Sum_of_Left_Leaves_404 {
     public int sumOfLeftLeaves(TreeNode root) {
         int ans = 0;
         if ( root == null) return 0;

@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution {
+class Symmetric_Tree_101 {
     public boolean isSymmetric(TreeNode root) {
         return isMirror(root,root);
     }
