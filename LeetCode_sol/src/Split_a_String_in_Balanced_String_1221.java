@@ -3,7 +3,7 @@ class Split_a_String_in_Balanced_String_1221 {
         int rs = 0;
         int ls = 0;
         int sum =0;
-        if ( s == null || s.length() == 0){
+        if ( s == null || s.isEmpty()){
             return 0;
         }
         for (int i = 0 ; i < s.length() ; i++) {
