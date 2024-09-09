@@ -1,4 +1,4 @@
-class Solution {
+class Split_a_String_in_Balanced_String_1221 {
     public int balancedStringSplit(String s) {
         int rs = 0;
         int ls = 0;
