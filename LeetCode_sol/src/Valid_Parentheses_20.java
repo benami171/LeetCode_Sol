@@ -1,4 +1,6 @@
-class Solution {
+import java.util.Stack;
+
+class Valid_Parentheses_20 {
     public static boolean isValid(String s) {
         if (s.length() < 2) return false;
         Stack<Character> stack = new Stack<>();
