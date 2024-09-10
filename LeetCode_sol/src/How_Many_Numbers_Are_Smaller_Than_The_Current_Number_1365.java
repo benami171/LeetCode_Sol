@@ -3,8 +3,8 @@ class How_Many_Numbers_Are_Smaller_Than_The_Current_Number_1365 {
         int[] bucket = new int[101];
         int[] ans = new int[nums.length];
 
-        for ( int i = 0 ; i < nums.length ; i ++) {
-            bucket[nums[i]]++;
+        for (int num : nums) {
+            bucket[num]++;
         }
         
         for (int i = 1 ; i <= 100; i++) {
