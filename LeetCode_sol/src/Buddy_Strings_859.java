@@ -9,21 +9,12 @@ public class Buddy_Strings_859 {
             if (s.charAt(i) != goal.charAt(i)) {
                 diff.add(i);
             }
-            if (diff.size() == 2){
-                if ( s.charAt(diff.get(0)) == goal.charAt(diff.get(1)) && s.charAt(diff.get(1)) == goal.charAt(diff.getFirst())){
-                    return true;
-                }
-            }
-            if (diff.isEmpty()) {
-                if(s.length() == 2 ){
-                    if (s.charAt(0) == s.charAt(1)) return true;
-                }
-                if (s.length() > 2) {
-                    return true;
-                }
-            }
-
         }
-        return true;
+        if (diff.size() == 2 && s.charAt(diff.get(0)) == goal.charAt(diff.get(1)) && s.charAt(diff.get(1)) == goal.charAt(diff.getFirst())) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
