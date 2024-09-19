@@ -10,11 +10,6 @@ public class Buddy_Strings_859 {
                 diff.add(i);
             }
         }
-        if (diff.size() == 2 && s.charAt(diff.get(0)) == goal.charAt(diff.get(1)) && s.charAt(diff.get(1)) == goal.charAt(diff.getFirst())) {
-            return true;
-        } else {
-            return false;
-        }
-
+        return diff.size() == 2 && s.charAt(diff.get(0)) == goal.charAt(diff.get(1)) && s.charAt(diff.get(1)) == goal.charAt(diff.getFirst());
     }
 }
