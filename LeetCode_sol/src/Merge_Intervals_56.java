@@ -17,7 +17,7 @@ public class Merge_Intervals_56 {
             int current_end = current_interval[1];
             int next_begin = interval[0];
             int next_end = interval[1];
-            if(current_end >= next_end) {
+            if(current_end >= next_begin) {
                 current_interval[1] = Math.max(current_end,next_end);
             } else {
                 current_interval = interval;
