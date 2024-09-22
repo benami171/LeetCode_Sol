@@ -6,7 +6,12 @@ public class Sort_List_148 {
 
         ListNode temp = head;
         ListNode slow = head;
+        ListNode fast = head;
 
+        while (fast != null || fast.next != null) {
+            slow = head.next;
+            fast = head.next.next;
+        }
 
     }
 }
