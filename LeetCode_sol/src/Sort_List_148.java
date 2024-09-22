@@ -16,6 +16,12 @@ public class Sort_List_148 {
 
         temp.next = null;
 
+        ListNode left_side = sortList(head);
+        ListNode right_side = sortList(slow);
+        return merge(left_side,right_side);
+    }
+
+    public ListNode merge(ListNode head1, ListNode head2){
 
     }
 }
