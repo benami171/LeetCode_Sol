@@ -9,6 +9,7 @@ public class Sort_List_148 {
         ListNode fast = head;
 
         while (fast != null || fast.next != null) {
+            temp = slow;
             slow = head.next;
             fast = head.next.next;
         }
