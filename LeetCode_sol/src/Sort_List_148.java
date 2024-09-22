@@ -36,7 +36,14 @@ public class Sort_List_148 {
             current_node = current_node.next;
         }
 
+        if (head1 != null) {
+            current_node.next = head1;
+            head1 = head1.next;
+        }
+        if (head2 != null) {
+            current_node.next = head2;
+            head2 = head2.next;
+        }
         return sorted_temp.next;
-
     }
 }
