@@ -4,6 +4,9 @@ public class Sort_List_148 {
             return head;
         }
 
+        ListNode temp = head;
+        ListNode slow = head;
+
 
     }
 }
