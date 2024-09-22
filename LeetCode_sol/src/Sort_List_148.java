@@ -14,5 +14,8 @@ public class Sort_List_148 {
             fast = head.next.next;
         }
 
+        temp.next = null;
+
+
     }
 }
