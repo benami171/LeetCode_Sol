@@ -1,27 +1,25 @@
 public class Reverse_Linked_List_ll_92 {
 
-    public ListNode reverseBetween(ListNode head, int m, int n) {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
         if (head == null) return null;
         ListNode prev = null;
         ListNode curr = head;
-        while (m > 1) {
+        while (left > 1) {
             prev = curr;
             curr = curr.next;
-            m--;
-            n--;
+            left--;
+            right--;
         }
-        // now that we're here, the n is the number of indexes from the current point forward
-        // that we need to reverse, say we got m=2 and n=4, once we got to position 2, we have
-        // 3 numbers including the current one to reverse.
-        ListNode connector = prev;
-        ListNode tail = curr; // will use to connect the reverse tail
 
-        while (n > 0) {
+        ListNode connector = prev;
+        ListNode tail = curr;
+
+        while (right > 0) {
             ListNode next = curr.next;
             curr.next = prev;
             prev = curr;
             curr = next;
-            n--;
+            right--;
         }
 
         if (connector != null) {
@@ -33,6 +31,3 @@ public class Reverse_Linked_List_ll_92 {
         return head;
     }
 }
-// 1->2->3->4->5->NULL
-// prev = 1, curr = 2, connector = 1, tail = 2
-//
