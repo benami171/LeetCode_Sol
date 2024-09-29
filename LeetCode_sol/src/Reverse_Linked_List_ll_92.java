@@ -27,8 +27,10 @@ public class Reverse_Linked_List_ll_92 {
         if (connector != null) {
             connector.next = prev;
         } else {
-
+            head = prev;
         }
+        tail.next = curr;
+        return head;
     }
 }
 // 1->2->3->4->5->NULL
