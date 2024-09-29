@@ -17,10 +17,17 @@ public class Reverse_Linked_List_ll_92 {
         ListNode tail = curr; // will use to connect the reverse tail
 
         while (n > 0) {
-            n--;
             ListNode next = curr.next;
             curr.next = prev;
-            prev
+            prev = curr;
+            curr = next;
+            n--;
+        }
+
+        if (connector != null) {
+            connector.next = prev;
+        } else {
+
         }
     }
 }
