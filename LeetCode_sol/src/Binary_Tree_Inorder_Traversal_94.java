@@ -19,7 +19,7 @@ import java.util.List;
 
 class Binary_Tree_Inorder_Traversal_94 {
     public List<Integer> inorderTraversal(TreeNode root) {
-        return dfs(root, new ArrayList());
+        return dfs(root, new ArrayList<>());
     }
 
     private List<Integer> dfs(TreeNode node,List<Integer> list){
